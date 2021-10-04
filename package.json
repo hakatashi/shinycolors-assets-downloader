@@ -1,0 +1,26 @@
+{
+  "name": "shinycolors-assets-downloader",
+  "version": "1.0.0",
+  "description": "Just don't be evil.",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakatashi/shinycolors-assets-downloader.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hakatashi/shinycolors-assets-downloader/issues"
+  },
+  "homepage": "https://github.com/hakatashi/shinycolors-assets-downloader#readme",
+  "dependencies": {
+    "@types/concat-stream": "^1.6.1",
+    "axios": "^0.22.0",
+    "concat-stream": "^2.0.0",
+    "mkdirp": "^1.0.4",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^1.0.2"
+  }
+}
