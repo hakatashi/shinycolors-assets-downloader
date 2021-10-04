@@ -1,4 +1,4 @@
-import {promises as fs} from 'fs';
+import fs from 'fs-extra';
 import path from 'path';
 import Axios from 'axios';
 import mkdirp from 'mkdirp';
@@ -12,6 +12,11 @@ const axios = Axios.create({
 const downloadAsset = async (assetPath: string, v?: number) => {
 	const localPath = path.join(__dirname, 'assets', assetPath);
 	await mkdirp(path.dirname(localPath));
+
+	if (!assetPath.startsWith('asset-map') && (await fs.pathExists(localPath))) {
+		console.log(`Skippig ${assetPath}...`);
+		return;
+	}
 
 	const hash = encryptPath(assetPath);
 
