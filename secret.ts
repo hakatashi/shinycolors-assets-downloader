@@ -12,7 +12,7 @@ export const decryptResource = async (data: Buffer) => {
 	}
 	const gunzip = createGunzip();
 	const res = await new Promise<Buffer>((resolve) => {
-		const concatter = concatStream(resolve);
+		const concatter = concatStream({encoding: 'buffer'}, resolve);
 		gunzip.pipe(concatter);
 		gunzip.on('error', () => {
 			concatter.end();
